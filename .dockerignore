@@ -1,0 +1,5 @@
+install.sh
+logs/
+*.md
+.git
+sites.json
