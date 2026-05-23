@@ -1,0 +1,13 @@
+services:
+  autovisit:
+    build: .
+    container_name: autovisit
+    # Le container s'arrête après chaque exécution
+    restart: "no"
+    volumes:
+      # sites.json reste sur l'hôte, monté en lecture seule
+      - ./sites.json:/app/sites.json:ro
+      # Logs persistants sur l'hôte
+      - ./logs:/app/logs
+    environment:
+      - TZ=Europe/Paris
